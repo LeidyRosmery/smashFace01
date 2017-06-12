@@ -5,6 +5,7 @@ var sede;
 var puntajeTotal=0;
 var inputName = $('input');
 var contentCoder = $('.coder');
+
 var repetido = function(num) {
     var repe = false;
     for (var i = 0; i < usados.length; i++) {
@@ -46,7 +47,7 @@ var seleccionSede = function(sede) {
             //  printFoto(sede);
     }
 }
-
+$('#puntajeTotal').text(puntajeTotal + " puntos");
 $('select').change(function(e) {
     var sede = $('.sede').val();
     seleccionSede(sede);

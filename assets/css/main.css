@@ -3,18 +3,23 @@
   margin: 0;
   padding: 0;
 }
+
+body{
+  font-family: "Roboto";
+}
 header{
   padding: 5% 10% 0 10%;
-
+}
+h1{
+  font-family: "Rokkitt";
 }
 hr{
   width: 5%;
-  font-weight: bold;
-  color: black;
   margin-bottom: 2%;
 }
 p{
   margin-bottom: 1%;
+
 }
 select{
   width: 20%;
@@ -45,21 +50,19 @@ label{
   margin-left: -60%;
 }
 button{
-  width: 20%;
+  width: 25%;
   height: 10%;
   background: #F9A91A;
   color: #fff;
   border: none;
 }
 input{
-
   width: 80%;
   height: 8%;
   padding: 0 4%;
   margin-bottom:  4% ;
   margin-top: 6%;
 }
-
 .imgCoder{
   height: 100%;
   width: 100%;

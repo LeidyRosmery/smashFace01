@@ -67,7 +67,7 @@ $('select').change(function(e) {
               puntajeTotal++;
             }
             contador=0;
-            $('#puntajeTotal').text(puntajeTotal);
+            $('#puntajeTotal').text(puntajeTotal + " puntos");
 
         }
         inputName.val("");

@@ -1,9 +1,46 @@
-.coder{
-  height: 250px;
-  width: 300px;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+header{
+  padding: 5% 10% 0 10%;
+}
+hr{
+  width: 5%;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 2%;
+}
+p{
+  margin-bottom: 1%;
+}
+select{
+  width: 20%;
+  margin-bottom: 2%;
+}
+.play-juego{
+  position: relative;
+  height: 350px;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.coder , .datos {
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  width: 50%;
+}
+.coder{
+  background: blue;
+}
+.datos{
+  left: 50%;
+  background: red;
+}
+
 .imgCoder{
   height: 250px;
   width: 300px;
-  border-radius: 20%;
 }

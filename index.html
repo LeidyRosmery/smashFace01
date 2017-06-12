@@ -10,17 +10,29 @@
 </head>
 
 <body>
-    <span id="puntajeTotal"></span>
-    <select class="sede" name="">
-      <option value="" hidden="" >Sede</option>
-      <option value="mexico">Mexico</option>
-      <option value="peru">Peru</option>
-    </select>
-    <div class="coder"></div>
-    <label for="nombreCoder">Ingresa su nombre !!!</label>
-    <input type="text" id="nombreCoder" name="" value="">
+  <header>
+      <h1> Smash Faces</h1>
+      <b><hr></b>
+      <p>Bienvenidas al juego de Smash Faces, tu mision es poder identificar a todas tus compañeras de clase de clase.
+        Ingresando para ellos su nombre . Tienes 5 oportunidades antes de perder 1 punto y pasar a la siguiente.
+      </p>
+      <span>Elige tu sede :</span>
+      <select class="sede" name="">
+         <option value="" hidden="" >Sede</option>
+         <option value="mexico">Mexico</option>
+         <option value="peru">Peru</option>
+      </select>
+      <span id="puntajeTotal"></span><br>
+   </header>
+    <div class="play-juego">
+      <div class="coder"></div>
+      <div class="datos">
+        <label for="nombreCoder">Ingresa su nombre:</label>
+        <input type="text" id="nombreCoder" name="" placeholder="Nombre" value="">
+        <button type="button" name="button"> COMPROBAR</button>
+      </div>
+    </div>
 
-    <button type="button" name="button"> Siguiente</button>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="assets/js/mexico.js"></script>
     <script type="text/javascript" src="assets/js/peru.js"></script>

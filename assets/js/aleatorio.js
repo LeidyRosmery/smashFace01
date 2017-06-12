@@ -1,5 +1,6 @@
 var usados = [];
 var arraySede;
+var inputName=$('input');
 var contentCoder = $('.coder');
 var repetido = function(num) {
     var repe = false;
@@ -8,11 +9,12 @@ var repetido = function(num) {
             repe = true;
         }
     }
+    console.log(repe);
     return repe;
 }
 var enteroAleatorio = function(min, max) {
   if (usados.length!=(max-min)) {
-    if (repe !=false) {
+    while (repe != false) {
       console.log("while");
         var num = Math.floor(Math.random() * (max - min)) + min;
         console.log(num);
@@ -23,9 +25,10 @@ var enteroAleatorio = function(min, max) {
     return num;
   }else {
     //var juego=;
-    return null;
     contentCoder.append($('<p> el juego a terminado </p>'));
     $('button').attr("disabled", true);
+    return null;
+
   }
 }
 var seleccionSede = function(sede) {
@@ -41,14 +44,23 @@ var seleccionSede = function(sede) {
     }
 }
 $('select').change(function(e) {
-  e.preventDefault();
-  e.stopPropagation();
+
     var sede = $('.sede').val();
     seleccionSede(sede);
     var numAleatorio=enteroAleatorio(1,6);
-    console.log(enteroAleatorio(1,6));
+    console.log(arraySede[numAleatorio].name);
     console.log(sede);
     var imgCoder = $(`<img  class="imgCoder" alt="${arraySede[numAleatorio].name}" src="${'assets/img/'+sede+'/'+ arraySede[numAleatorio].image}" />`);
     contentCoder.append(imgCoder);
-
+    $('button').on('click', function(){
+      var numAleatorio=enteroAleatorio(1,6);
+      if (numAleatorio!= null && inputName.val()==arraySede[numAleatorio].name) {
+        console.log(sede);
+        var imgCoder = $(`<img  class="imgCoder" alt="${arraySede[numAleatorio].name}" src="${'assets/img/'+sede+'/'+ arraySede[numAleatorio].image}" />`);
+        contentCoder.append(imgCoder);
+      }else {
+        console.log("intenta");
+      }
+      //contentCoder.empty();
+    });
 });

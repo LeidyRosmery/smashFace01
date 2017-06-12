@@ -5,6 +5,8 @@ var sede;
 var puntajeTotal=0;
 var inputName = $('input');
 var contentCoder = $('.coder');
+$('.datos').append('<p id="error"></p>');
+
 
 var repetido = function(num) {
     var repe = false;
@@ -51,17 +53,19 @@ $('#puntajeTotal').text(puntajeTotal + " puntos");
 $('select').change(function(e) {
     var sede = $('.sede').val();
     seleccionSede(sede);
-    numAleatorio = enteroAleatorio(1, 6);
+    numAleatorio = enteroAleatorio(1, arraySede.length);
     var imgCoder = $(`<img  class="imgCoder" alt="${arraySede[numAleatorio].name}" src="${'assets/img/'+sede+'/'+ arraySede[numAleatorio].image}" />`);
     contentCoder.append(imgCoder);
      var contador=0;
     $('button').on('click', function() {
       contador++;
         if ((numAleatorio != null && inputName.val()==arraySede[numAleatorio].name)||contador==5) {
-          contentCoder.empty();
-            numAleatorio = enteroAleatorio(1, 6);
+            contentCoder.empty();
+            $('#error').text("");
+            numAleatorio = enteroAleatorio(1,arraySede.length);
             var imgCoder = $(`<img  class="imgCoder" alt="${arraySede[numAleatorio].name}" src="${'assets/img/'+sede+'/'+ arraySede[numAleatorio].image}" />`);
             contentCoder.append(imgCoder);
+
             if(contador==5){
               puntajeTotal--;
             }else {
@@ -69,8 +73,12 @@ $('select').change(function(e) {
             }
             contador=0;
             $('#puntajeTotal').text(puntajeTotal + " puntos");
+        }
+        else {
+            $('#error').text("Sigue intentando");
 
         }
+
         inputName.val("");
     });
 });
